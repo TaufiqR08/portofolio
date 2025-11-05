@@ -15,15 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portofolio Taufiqurrohman",
   description: "Made by Taufiqurrohman",
-  icons: {
-    icon: [
-      { url: "/foto3.png" },
-      { url: "/foto3.png", sizes: "32x32", type: "image/png" },
-      { url: "/foto3.png", sizes: "16x16", type: "image/png" },
-    ],
-    shortcut: "/foto3.png",
-    apple: "/foto3.png",
-  },
 };
 
 export default function RootLayout({
