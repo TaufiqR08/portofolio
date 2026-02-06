@@ -30,6 +30,7 @@ export default function Portfolio() {
         "home",
         "about",
         "experience",
+        "projects",
         "skills",
         "education",
         "contact",
@@ -108,6 +109,27 @@ export default function Portfolio() {
     },
   ];
 
+  const projects = [
+    {
+      title: "SIPKANTI",
+      subtitle: "Sistem Informasi Pelamar Tenaga Kerja Terintegrasi",
+      description:
+        "This application is managed by the KSB Manpower and Transmigration Service (Disnakertrans) to centrally/online record job applicants, facilitate one-stop recruitment, and connect job seekers with companies that need workers.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+      link: "", // Add your link here if available
+      category: "Web Application",
+    },
+    {
+      title: "Siprotapgacek",
+      subtitle: "Sistem Informasi Monitoring Agenda Pimpinan",
+      description:
+        "Full-stack web application for protocol and ceremonial management system. Built with Laravel framework handling both frontend and backend operations, including event scheduling, document management, and reporting features.",
+      technologies: ["Laravel", "PHP", "MySQL", "Bootstrap", "JavaScript"],
+      link: "https://siprogacek.sumbawabaratkab.go.id", // Based on conversation history
+      category: "Full-Stack Application",
+    },
+  ];
+
   const skills = {
     Frontend: [
       "Next.js",
@@ -158,6 +180,7 @@ export default function Portfolio() {
                 "Home",
                 "About",
                 "Experience",
+                "Projects",
                 "Skills",
                 "Education",
                 "Contact",
@@ -209,6 +232,7 @@ export default function Portfolio() {
                 "Home",
                 "About",
                 "Experience",
+                "Projects",
                 "Skills",
                 "Education",
                 "Contact",
@@ -422,6 +446,91 @@ export default function Portfolio() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className={`py-20 px-4 ${isDark ? "bg-gray-800/50" : "bg-gray-100/50"}`}
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className={`p-6 rounded-2xl ${
+                  isDark ? "bg-gray-900/50" : "bg-white"
+                } shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border ${
+                  isDark ? "border-gray-700" : "border-gray-200"
+                } group`}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Code size={24} className="text-blue-500" />
+                      <span
+                        className={`text-xs px-2 py-1 rounded-full ${
+                          isDark ? "bg-blue-500/20" : "bg-blue-100"
+                        } text-blue-500 font-semibold`}
+                      >
+                        {project.category}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-blue-500 mb-1">
+                      {project.title}
+                    </h3>
+                    <p
+                      className={`text-sm font-semibold mb-3 ${
+                        isDark ? "text-gray-400" : "text-gray-600"
+                      }`}
+                    >
+                      {project.subtitle}
+                    </p>
+                  </div>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-2 rounded-lg transition-all duration-300 ${
+                        isDark
+                          ? "hover:bg-gray-800"
+                          : "hover:bg-gray-100"
+                      } group-hover:scale-110`}
+                      aria-label="Visit project"
+                    >
+                      <ExternalLink size={20} className="text-blue-500" />
+                    </a>
+                  )}
+                </div>
+                <p
+                  className={`mb-4 leading-relaxed ${
+                    isDark ? "text-gray-300" : "text-gray-700"
+                  }`}
+                >
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className={`px-3 py-1 rounded-lg text-sm font-medium ${
+                        isDark
+                          ? "bg-gray-800 text-gray-300"
+                          : "bg-gray-100 text-gray-700"
+                      } hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 hover:text-white transition-all duration-300`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
