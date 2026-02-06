@@ -261,91 +261,224 @@ export default function Portfolio() {
         id="home"
         className="min-h-screen flex items-center justify-center pt-16 px-4"
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8 animate-fadeIn">
-            <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl">
-              <Image
-                src="/me.jpeg"
-                alt="Taufiqurrohman Profile"
-                width={160}
-                height={160}
-                className="object-cover w-full h-full"
-                priority
-              />
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Information */}
+            <div className="space-y-6 md:pr-8">
+              {/* Role Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20 backdrop-blur-sm">
+                <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                <span className="text-blue-500 font-semibold text-sm">
+                  Frontend Developer
+                </span>
+              </div>
+
+              {/* Name */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  TAUFIQURROHMAN
+                </span>
+              </h1>
+
+              {/* Title */}
+              <p
+                className={`text-xl md:text-2xl font-medium ${
+                  isDark ? "text-gray-300" : "text-gray-600"
+                }`}
+              >
+                Software Engineer
+              </p>
+
+              {/* Description */}
+              <p
+                className={`text-base md:text-lg leading-relaxed ${
+                  isDark ? "text-gray-400" : "text-gray-600"
+                }`}
+              >
+                Crafting beautiful, performant web applications with modern
+                technologies. Passionate about creating intuitive user
+                experiences and secure digital solutions.
+              </p>
+
+              {/* Contact Info */}
+              <div className="space-y-3 pt-4">
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`p-2 rounded-lg ${
+                      isDark ? "bg-gray-800" : "bg-gray-100"
+                    }`}
+                  >
+                    <MapPin size={18} className="text-blue-500" />
+                  </div>
+                  <span
+                    className={isDark ? "text-gray-300" : "text-gray-700"}
+                  >
+                    West Sumbawa, Indonesia
+                  </span>
+                </div>
+                <a
+                  href="mailto:rahmantaufiq521@gmail.com"
+                  className="flex items-center gap-3 group"
+                >
+                  <div
+                    className={`p-2 rounded-lg transition-colors ${
+                      isDark
+                        ? "bg-gray-800 group-hover:bg-gray-700"
+                        : "bg-gray-100 group-hover:bg-gray-200"
+                    }`}
+                  >
+                    <Mail size={18} className="text-blue-500" />
+                  </div>
+                  <span
+                    className={`${
+                      isDark ? "text-gray-300" : "text-gray-700"
+                    } group-hover:text-blue-500 transition-colors`}
+                  >
+                    rahmantaufiq521@gmail.com
+                  </span>
+                </a>
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`p-2 rounded-lg ${
+                      isDark ? "bg-gray-800" : "bg-gray-100"
+                    }`}
+                  >
+                    <Phone size={18} className="text-blue-500" />
+                  </div>
+                  <span
+                    className={isDark ? "text-gray-300" : "text-gray-700"}
+                  >
+                    085238237530
+                  </span>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 pt-6">
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-white font-semibold hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300"
+                >
+                  Get In Touch
+                </button>
+                <button
+                  onClick={() => scrollToSection("projects")}
+                  className={`px-8 py-4 rounded-lg font-semibold border-2 transition-all duration-300 ${
+                    isDark
+                      ? "border-gray-700 hover:border-blue-500 hover:bg-gray-800"
+                      : "border-gray-300 hover:border-blue-500 hover:bg-gray-50"
+                  }`}
+                >
+                  View Projects
+                </button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex gap-4 pt-4">
+                <a
+                  href="https://github.com/TaufiqR08"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-3 rounded-full transition-all duration-300 ${
+                    isDark
+                      ? "bg-gray-800 hover:bg-gray-700"
+                      : "bg-gray-100 hover:bg-gray-200"
+                  } hover:scale-110 hover:shadow-lg`}
+                  aria-label="GitHub"
+                >
+                  <Github size={24} className="text-blue-500" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/taufiqr08/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-3 rounded-full transition-all duration-300 ${
+                    isDark
+                      ? "bg-gray-800 hover:bg-gray-700"
+                      : "bg-gray-100 hover:bg-gray-200"
+                  } hover:scale-110 hover:shadow-lg`}
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={24} className="text-blue-500" />
+                </a>
+              </div>
             </div>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fadeIn">
-            TAUFIQURROHMAN
-          </h1>
-          <p
-            className={`text-xl md:text-2xl mb-8 ${
-              isDark ? "text-gray-300" : "text-gray-600"
-            }`}
-          >
-            Software Engineer & Cybersecurity Mentor
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <div
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg ${
-                isDark ? "bg-gray-800" : "bg-gray-100"
-              }`}
-            >
-              <MapPin size={18} className="text-blue-500" />
-              <span>West Sumbawa, Indonesia</span>
+
+            {/* Right Side - Photo */}
+            <div className="relative flex justify-center md:justify-end">
+              {/* Decorative Background Elements */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-80 h-80 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+              </div>
+
+              {/* Photo Container */}
+              <div className="relative z-10">
+                {/* Gradient Border Effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
+                
+                {/* Photo */}
+                <div className="relative">
+                  <div
+                    className={`relative w-72 h-96 md:w-96 md:h-[500px] rounded-3xl overflow-hidden border-4 ${
+                      isDark ? "border-gray-800" : "border-white"
+                    } shadow-2xl transform hover:scale-105 transition-all duration-500`}
+                  >
+                    <Image
+                      src="/me2.jpeg"
+                      alt="Taufiqurrohman - Frontend Developer"
+                      width={384}
+                      height={500}
+                      className="object-cover w-full h-full"
+                      priority
+                    />
+                    {/* Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 via-transparent to-transparent"></div>
+                  </div>
+
+                  {/* Floating Badge */}
+                  <div
+                    className={`absolute -bottom-4 -left-4 px-6 py-3 rounded-2xl ${
+                      isDark
+                        ? "bg-gray-900/90 border border-gray-700"
+                        : "bg-white/90 border border-gray-200"
+                    } backdrop-blur-md shadow-xl`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <Briefcase size={20} className="text-blue-500" />
+                      <div>
+                        <p className="text-xs text-gray-500 font-medium">
+                          Currently at
+                        </p>
+                        <p className="text-sm font-bold text-blue-500">
+                          DISKOMINFO
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Stats Badge */}
+                  <div
+                    className={`absolute -top-4 -right-4 px-6 py-3 rounded-2xl ${
+                      isDark
+                        ? "bg-gray-900/90 border border-gray-700"
+                        : "bg-white/90 border border-gray-200"
+                    } backdrop-blur-md shadow-xl`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <Code size={20} className="text-purple-500" />
+                      <div>
+                        <p className="text-xs text-gray-500 font-medium">
+                          Experience
+                        </p>
+                        <p className="text-sm font-bold text-purple-500">
+                          2+ Years
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <a
-              href="mailto:rahmantaufiq521@gmail.com"
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg ${
-                isDark
-                  ? "bg-gray-800 hover:bg-gray-700"
-                  : "bg-gray-100 hover:bg-gray-200"
-              } transition-colors`}
-            >
-              <Mail size={18} className="text-blue-500" />
-              <span>rahmantaufiq521@gmail.com</span>
-            </a>
-            <div
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg ${
-                isDark ? "bg-gray-800" : "bg-gray-100"
-              }`}
-            >
-              <Phone size={18} className="text-blue-500" />
-              <span>085238237530</span>
-            </div>
-          </div>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-white font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
-          >
-            Get In Touch
-          </button>
-          <div className="flex justify-center gap-6 mt-8">
-            <a
-              href="https://github.com/TaufiqR08"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`p-3 rounded-full transition-all duration-300 ${
-                isDark
-                  ? "bg-gray-800 hover:bg-gray-700"
-                  : "bg-gray-100 hover:bg-gray-200"
-              } hover:scale-110`}
-              aria-label="GitHub"
-            >
-              <Github size={24} className="text-blue-500" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/taufiqr08/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`p-3 rounded-full transition-all duration-300 ${
-                isDark
-                  ? "bg-gray-800 hover:bg-gray-700"
-                  : "bg-gray-100 hover:bg-gray-200"
-              } hover:scale-110`}
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={24} className="text-blue-500" />
-            </a>
           </div>
         </div>
       </section>
