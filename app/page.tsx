@@ -251,9 +251,8 @@ export default function Portfolio() {
     };
   }, [dispatch]);
 
-  const goTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    dispatch(setMenuOpen(false));
+  const closeMenu = () => {
+    if (menuOpen) dispatch(setMenuOpen(false));
   };
 
   return (
@@ -265,13 +264,14 @@ export default function Portfolio() {
 
         <nav className={menuOpen ? "nav open" : "nav"} aria-label="Main navigation">
           {navItems.map(([label, id]) => (
-            <button
+            <a
               className={activeSection === id ? "active" : ""}
               key={id}
-              onClick={() => goTo(id)}
+              href={`#${id}`}
+              onClick={closeMenu}
             >
               {label}
-            </button>
+            </a>
           ))}
           <a className="nav-cta" href={emailHref}>
             Let&apos;s talk <ArrowUpRight size={16} />
@@ -303,9 +303,9 @@ export default function Portfolio() {
           </p>
 
           <div className="hero-actions hero-enter delay-3">
-            <button className="button primary" onClick={() => goTo("projects")}>
+            <a className="button primary" href="#projects">
               Explore my work <ArrowDown size={18} />
-            </button>
+            </a>
             <a className="button secondary" href={emailHref}>
               <Mail size={18} /> Email me
             </a>
@@ -572,9 +572,9 @@ export default function Portfolio() {
           TR<span>.</span>
         </a>
         <p>(c) {new Date().getFullYear()} Taufiqurrohman. Built with intention.</p>
-        <button onClick={() => goTo("home")}>
+        <a className="back-to-top" href="#home">
           Back to top <ArrowUpRight size={16} />
-        </button>
+        </a>
       </footer>
     </main>
   );
