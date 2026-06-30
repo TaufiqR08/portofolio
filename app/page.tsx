@@ -251,8 +251,13 @@ export default function Portfolio() {
     };
   }, [dispatch]);
 
-  const closeMenu = () => {
-    if (menuOpen) dispatch(setMenuOpen(false));
+  const goTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const top = element.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+    dispatch(setMenuOpen(false));
   };
 
   return (
@@ -264,14 +269,13 @@ export default function Portfolio() {
 
         <nav className={menuOpen ? "nav open" : "nav"} aria-label="Main navigation">
           {navItems.map(([label, id]) => (
-            <a
+            <button
               className={activeSection === id ? "active" : ""}
               key={id}
-              href={`#${id}`}
-              onClick={closeMenu}
+              onClick={() => goTo(id)}
             >
               {label}
-            </a>
+            </button>
           ))}
           <a className="nav-cta" href={emailHref}>
             Let&apos;s talk <ArrowUpRight size={16} />
@@ -303,9 +307,9 @@ export default function Portfolio() {
           </p>
 
           <div className="hero-actions hero-enter delay-3">
-            <a className="button primary" href="#projects">
+            <button className="button primary" onClick={() => goTo("projects")}>
               Explore my work <ArrowDown size={18} />
-            </a>
+            </button>
             <a className="button secondary" href={emailHref}>
               <Mail size={18} /> Email me
             </a>
@@ -572,9 +576,9 @@ export default function Portfolio() {
           TR<span>.</span>
         </a>
         <p>(c) {new Date().getFullYear()} Taufiqurrohman. Built with intention.</p>
-        <a className="back-to-top" href="#home">
+        <button onClick={() => goTo("home")}>
           Back to top <ArrowUpRight size={16} />
-        </a>
+        </button>
       </footer>
     </main>
   );

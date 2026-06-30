@@ -938,8 +938,7 @@ footer p {
   font-size: 0.76rem;
 }
 
-footer button,
-footer .back-to-top {
+footer button {
   display: flex;
   padding: 8px 0;
   background: transparent;
