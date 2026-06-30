@@ -334,7 +334,7 @@ export default function Portfolio() {
         <div className="hero-visual hero-enter delay-2">
           <div className="portrait-frame">
             <Image
-              src="/me2.jpeg"
+              src="/taufiq-kemeja1.png"
               alt="Taufiqurrohman, Software Engineer"
               fill
               priority
