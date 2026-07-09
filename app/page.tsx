@@ -117,7 +117,7 @@ const projects = [
       "A web-based personnel management system for managing employee records and supporting administrative processes.",
     role: "Fullstack Developer",
     stack: ["Next.js", "TypeScript", "Node.js", "MySQL", "Prisma ORM"],
-    link: "https://sipeka.sumbawabaratkab.go.id/",
+    link: "https://sipeka.kabsumbawabarat.com/",
   },
   {
     number: "03",
